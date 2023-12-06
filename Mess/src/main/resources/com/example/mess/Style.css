@@ -1,0 +1,7 @@
+#pane >.viewport {
+    -fx-background-color: white;
+}
+
+.button {
+    -fx-background-color: transparent;
+}

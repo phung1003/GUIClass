@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="anchorPane" prefHeight="860.0" prefWidth="579.0" style="-fx-background-color: white;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mess.MainScene">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="291.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #A3DDF0;" BorderPane.alignment="CENTER">
+               <children>
+                  <Circle fx:id="avatar" fill="DODGERBLUE" radius="23.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Circle>
+                  <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="78.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="name" text="Name">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="status" text="Online" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="call" mnemonicParsing="false" onAction="#call" prefHeight="54.0" prefWidth="54.0">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="video" mnemonicParsing="false" onAction="#video" prefHeight="54.0" prefWidth="54.0">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <ScrollPane fx:id="pane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="511.0" prefWidth="428.0" style="-fx-background-color: white;" BorderPane.alignment="BOTTOM_CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+               </BorderPane.margin>
+               <content>
+                  <VBox fx:id="content" alignment="BOTTOM_CENTER" spacing="10.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </center>
+         <bottom>
+            <HBox fx:id="hBox" alignment="CENTER" prefHeight="79.0" prefWidth="649.0" spacing="10.0" style="-fx-background-color: #A3DDF0;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="image" mnemonicParsing="false" onAction="#image" prefHeight="54.0" prefWidth="54.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextArea fx:id="message" prefHeight="32.0" prefWidth="201.0" wrapText="true" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="12.0" top="13.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="send" mnemonicParsing="false" onAction="#send" prefHeight="54.0" prefWidth="54.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
