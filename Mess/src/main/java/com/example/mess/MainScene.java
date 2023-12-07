@@ -148,13 +148,30 @@ public class MainScene implements Initializable {
     private void setText(HBox hBox) {
         Text text = new Text(message.getText());
         text.setStyle("-fx-font: 24 arial; ");
-        text.setFill(Color.WHITE);
         TextFlow textFlow = new TextFlow(text);
         textFlow.setMaxWidth(content.getWidth() / 1.2);
+
         textFlow.setPadding(new Insets(10));
+        text.setFill(Color.WHITE);
         textFlow.setStyle("-fx-background-color: #3978F7; -fx-background-radius: 10");
+
         hBox.getChildren().add(textFlow);
-        chooseMode(count % 2, hBox);
+        chooseMode(count % 2, hBox, text, textFlow);
+    }
+
+    public void chooseMode(int mode, HBox hBox, Text text, TextFlow textFlow) {
+        switch (mode) {
+            case left:
+                hBox.setAlignment(Pos.CENTER_LEFT);
+                text.setFill(Color.BLACK);
+                textFlow.setStyle("-fx-background-color: #F0F0F0; -fx-background-radius: 10");
+                break;
+            case right:
+                hBox.setAlignment(Pos.CENTER_RIGHT);
+                text.setFill(Color.WHITE);
+                textFlow.setStyle("-fx-background-color: #3978F7; -fx-background-radius: 10");
+                break;
+        }
     }
 
     @FXML
@@ -190,16 +207,7 @@ public class MainScene implements Initializable {
         this.status = status;
     }
 
-    public void chooseMode(int mode, HBox hBox) {
-        switch (mode) {
-            case left:
-                hBox.setAlignment(Pos.CENTER_LEFT);
-                break;
-            case right:
-                hBox.setAlignment(Pos.CENTER_RIGHT);
-                break;
-        }
-    }
+
 
     public void changeScreen(String sceneName, String usage) throws IOException {
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
